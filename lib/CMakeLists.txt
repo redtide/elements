@@ -129,6 +129,13 @@ elseif (ELEMENTS_HOST_UI_LIBRARY STREQUAL "gtk")
       host/linux/key.cpp
       host/linux/window.cpp
    )
+elseif (ELEMENTS_HOST_UI_LIBRARY STREQUAL "qt5")
+   set(ELEMENTS_HOST
+      host/qt5/app.cpp
+      host/qt5/base_view.cpp
+      host/qt5/key.cpp
+      host/qt5/window.cpp
+   )
 elseif (WIN32)
    set(ELEMENTS_HOST
       host/windows/utils.hpp
@@ -241,6 +248,14 @@ if (ELEMENTS_HOST_UI_LIBRARY STREQUAL "gtk")
 endif()
 
 ###############################################################################
+# Qt5
+
+if (ELEMENTS_HOST_UI_LIBRARY STREQUAL "qt5")
+   find_package (Qt5 COMPONENTS Widgets REQUIRED)
+   target_link_libraries(elements PRIVATE Qt5::Widgets)
+endif()
+
+###############################################################################
 # Asio headers
 target_include_directories(elements PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/external/asio/asio/include)
 
@@ -278,8 +293,11 @@ elseif(ELEMENTS_HOST_UI_LIBRARY STREQUAL "win32")
         target_compile_definitions(elements PRIVATE ELEMENTS_HOST_ONLY_WIN7)
         message(STATUS "Windows 7 compatibility enabled")
     endif()
+elseif(ELEMENTS_HOST_UI_LIBRARY STREQUAL "qt5")
+    target_compile_definitions(elements PUBLIC ELEMENTS_HOST_UI_LIBRARY_QT5)
+    set (CMAKE_AUTOMOC ON)
 else()
-    message(FATAL_ERROR "Invalid ELEMENTS_HOST_UI_LIBRARY=${ELEMENTS_HOST_UI_LIBRARY}. Set gtk, cocoa or win32.")
+    message(FATAL_ERROR "Invalid ELEMENTS_HOST_UI_LIBRARY=${ELEMENTS_HOST_UI_LIBRARY}. Set gtk, qt5, cocoa or win32.")
 endif()
 
 ###############################################################################

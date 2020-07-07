@@ -277,7 +277,7 @@ namespace cycfi { namespace elements
    // The base view base class
    ////////////////////////////////////////////////////////////////////////////
 
-#if defined(ELEMENTS_HOST_UI_LIBRARY_COCOA) || defined(ELEMENTS_HOST_UI_LIBRARY_GTK)
+#if defined(ELEMENTS_HOST_UI_LIBRARY_COCOA) || defined(ELEMENTS_HOST_UI_LIBRARY_GTK) || defined(ELEMENTS_HOST_UI_LIBRARY_QT5)
    struct host_view;
    using host_view_handle = host_view*;
    struct host_window;
@@ -293,7 +293,7 @@ namespace cycfi { namespace elements
    {
    public:
 
-#if defined(ELEMENTS_HOST_UI_LIBRARY_COCOA) || defined(ELEMENTS_HOST_UI_LIBRARY_GTK)
+#if defined(ELEMENTS_HOST_UI_LIBRARY_COCOA) || defined(ELEMENTS_HOST_UI_LIBRARY_GTK) || defined(ELEMENTS_HOST_UI_LIBRARY_QT5)
                         base_view(host_view_handle h);
 #endif
                         base_view(extent size_);

@@ -11,6 +11,8 @@
 
 #if defined(ELEMENTS_HOST_UI_LIBRARY_GTK)
 using GtkApplication = struct _GtkApplication;
+#elif defined(ELEMENTS_HOST_UI_LIBRARY_QT5)
+#include <QApplication>
 #endif
 
 namespace cycfi { namespace elements
@@ -38,6 +40,8 @@ namespace cycfi { namespace elements
       void* _menubar;
 #elif defined(ELEMENTS_HOST_UI_LIBRARY_GTK)
       GtkApplication* _app;
+#elif defined(ELEMENTS_HOST_UI_LIBRARY_QT5)
+      QApplication* _app;
 #elif defined(ELEMENTS_HOST_UI_LIBRARY_WIN32)
       bool  _running = true;
 #endif
