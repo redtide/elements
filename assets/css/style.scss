@@ -60,27 +60,26 @@ img
     text-align: center;
 }
 
-ul.navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
+nav {
+    border-bottom: 1px solid #eaecea;
+
+    @include large {
+        max-width: 52rem;
+        margin: 0 auto;
+    }
 }
 
-ul.navigation li {
-    float: left;
+nav li {
+    display: inline;
 }
 
-ul.navigation li a {
+nav li a {
     display: inline-block;
-    color: #ddd;
-    text-align: center;
-    text-decoration: none;
-    padding: 12px;
+    padding: 10px;
+    color: #444;
 }
 
-ul.navigation li a:hover {
-    background-color: #222;
-    color: #fff;
+nav li a:hover {
+    text-decoration: none;
+    color: #152999e5;
 }
