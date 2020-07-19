@@ -79,7 +79,7 @@ nav li a {
     color: #444;
 }
 
-nav li a:hover {
+nav li a:hover, .anchorjs-link:hover {
     text-decoration: none;
     color: #152999e5;
 }
