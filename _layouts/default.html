@@ -41,14 +41,10 @@
             <img src="{{site.logo | relative_url}}" alt="Logo" />
         </a>
     </header> -->
-
+	{% include navigation.html %}
     <main id="content" class="main-content" role="main">
 
-        <a href="https://github.com/cycfi/elements">
-            <img src="assets/images/elements.png" alt="Logo" />
-        </a>
-
-      {% include anchor_headings.html html=content anchorClass="toc-anchor" anchorBody="#" %}
+      {% include anchor_headings.html html=content anchorClass="toc-anchor" anchorBody="⚓" %}
 
       <!-- <footer class="site-footer">
         {% if site.github.is_project_page %}

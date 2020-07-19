@@ -60,3 +60,27 @@ img
     text-align: center;
 }
 
+ul.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+ul.navigation li {
+    float: left;
+}
+
+ul.navigation li a {
+    display: inline-block;
+    color: #ddd;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+}
+
+ul.navigation li a:hover {
+    background-color: #222;
+    color: #fff;
+}
