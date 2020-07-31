@@ -6,9 +6,51 @@
 
 - label: "Setup"
   url: "setup"
+  pages:
+  - label: "Requirements"
+    url: "setup#requirements"
+
+  - label: "MacOS Installation"
+    url: "setup#macos"
+
+  - label: "Windows Installation"
+    url: "setup#windows"
+
+  - label: "Windows Installation (MinGW + Gtk)"
+    url: "setup#windows-mingw-gtk"
+
+  - label: "Linux Installation"
+    url: "setup#linux"
+
+  - label: "Building and Running the examples"
+    url: "setup#building-and-running-the-examples"
+
+  - label: "Building Outside the Project"
+    url: "setup#building-outside-the-project"
 
 - label: "Aspects"
   url: "aspects"
+  pages:
+  - label: "Minimal Example"
+    url: "aspects#minimal-example"
+
+  - label: "App and Window"
+    url: "aspects#app-and-window"
+
+  - label: "Background"
+    url: "aspects#background"
+
+  - label: "Aligns and Sizes"
+    url: "aspects#aligns-and-sizes"
+
+  - label: "Labels, Margins and Layers"
+    url: "aspects#labels-margins-and-layers"
+
+  - label: "Let’s Make a Button"
+    url: "aspects#lets-make-a-button"
+
+  - label: "Sliders too!"
+    url: "aspects#sliders-too"
 
 - label: "Context"
   url: "context"

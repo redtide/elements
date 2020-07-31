@@ -1,14 +1,21 @@
 <nav>
-  <ul>
-    <li>
-      <a href="https://github.com/cycfi/elements/">
-        <img src="{{ '/assets/images/logo.png' | relative_url }}"/>
-      </a>
-    </li>
-  {% for item in site.data.navigation %}
-    <li>
-      <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
-    </li>
-  {% endfor %}
-  </ul>
+  <a href="https://github.com/cycfi/elements/">
+    <img src="{{ '/assets/images/logo.png' | relative_url }}"/>
+  </a>
+{% for item in site.data.navigation %}
+  {%-if item.pages-%}
+  <div class="dropdown">
+    <button class="dropbtn"><a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    {%-for p in item.pages-%}
+      <a href="{{ p.url }}">{{ p.label }}</a>
+    {%-endfor-%}
+    </div>
+  </div>
+  {%-else-%}
+  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+  {%-endif-%}
+{%-endfor-%}
 </nav>

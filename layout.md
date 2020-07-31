@@ -2,23 +2,6 @@
 ---
 # Layout
 
-## Table of Contents
-* [Limits](#limits)
-* [Size Elements](#size-elements)
-* [Stretch Elements](#stretch-elements)
-* [Scale Element](#scale-element)
-* [Align Elements](#align-elements)
-* [Margin Elements](#margin-elements)
-* [Floating](#floating-element)
-* [Tiles and Grids](#tiles-and-grids)
-* [Horizontal Grids](#horizontal-grids)
-* [Horizontal Tiles](#horizontal-tiles)
-* [Vertical Grids](#vertical-grids)
-* [Vertical Tiles](#vertical-tiles)
-* [Layers](#layers)
-* [Decks](#decks)
-* [Flow](#flow-element)
-
 -------------------------------------------------------------------------------
 The Elements Library provides a comprehensive set of elements for laying out
 elements in the view.
@@ -118,7 +101,7 @@ implementation defined).
 * An element has a fixed vertical size if this expression is true:
   `limits.min.y == limits.max.y`.
 
-#### Examples
+### Examples
 
 ```c++
 { { 100, 100 }, { 100, 100 } }; // Fixed size
@@ -161,6 +144,7 @@ limit(limits, subject)
 | `subject` | Instance of `Element`      |
 
 #### Semantics
+
 1. The *limits* of `subject` will be set to the specified `limits`
    constrained by the natural *limits* of the `subject` (the natural *limits*
    of the element will not be violated).
@@ -184,6 +168,7 @@ fixed_size({ width, height }, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. `subject` will be laid out with a fixed `width` and `height`, constrained
    by the natural *limits* of the `subject` (the natural *limits* of the
    element will not be violated).
@@ -209,6 +194,7 @@ hsize(width, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. `subject` will be laid out with a fixed `width`, constrained by the
    natural *horizontal limits* of the `subject` (the natural *horizontal
    limits* of the element will not be violated).
@@ -235,6 +221,7 @@ vsize(height, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. `subject` will be laid out with a fixed `height`, constrained by the
    natural *vertical limits* of the `subject` (the natural *vertical limits*
    of the element will not be violated).
@@ -261,6 +248,7 @@ min_size({ width, height }, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. The *minimum limits* of `subject` will be set to the specified `width` and
    `height`, constrained by the natural *minimum limits* of the `subject`.
 2. the natural *minimum limits* of the element will not be violated.
@@ -286,6 +274,7 @@ hmin_size(width, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The *minimum horizontal limit* of `subject` will be set to the specified
    `width` constrained by the natural *horizontal minimum limits* of the
    `subject`.
@@ -313,6 +302,7 @@ vmin_size(height, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The *minimum vertical limit* of `subject` will be set to the specified `height`
    constrained by the natural vertical *minimum limits* of the `subject`.
 2. The natural vertical *minimum limits* of the element will not be violated.
@@ -338,6 +328,7 @@ max_size({ width, height }, subject)
 | subject            | Instance of `Element` |
 
 #### Semantics
+
 1. The *maximum limits* of `subject` will be set to the specified `width` and
    `height`, constrained by the natural *maximum limits* of the `subject`.
 2. The natural *maximum limits* of the element will not be violated.
@@ -363,6 +354,7 @@ hmax_size(width, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The *maximum horizontal limit* of `subject` will be set to the specified
    `width` constrained by the natural *maximum horizontal limit* of the
    `subject`.
@@ -390,6 +382,7 @@ vmax_size(height, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The *maximum vertical limit* of `subject` will be set to the specified
    `height` constrained by the natural *maximum vertical limit* of the
    `subject`
@@ -448,6 +441,7 @@ hstretch(stretch, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The `subject` will assume the given `stretch` value.
 2. The stretch value has no effect to elements with fixed horizontal size.
 2. Returns instance of `Proxy`.
@@ -480,6 +474,7 @@ vstretch(stretch, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The `subject` will assume the given `stretch` value.
 2. The stretch value has no effect to elements with fixed *vertical limits*.
 2. Returns instance of `Proxy`.
@@ -517,6 +512,7 @@ scale(scale_, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. The `subject` will scaled given the `scale_` value. A value > 1.0 scales
    the element up (zoom in), while a value < 1.0 scales down (zoom out).
 2. Returns instance of `Proxy`.
@@ -550,6 +546,7 @@ halign(align, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Given a total allocated space `X`, `subject` will be positioned
    horizontally to `X * align`.
 2. The `subject` will assume its *minimum horizontal limit*.
@@ -579,6 +576,7 @@ align_left(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `halign(0.0, subject)`
 2. Returns instance of `Proxy`.
 
@@ -601,6 +599,7 @@ align_center(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `halign(0.5, subject)`
 2. Returns instance of `Proxy`.
 
@@ -623,6 +622,7 @@ align_right(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `halign(1.0, subject)`
 2. Returns instance of `Proxy`.
 
@@ -646,12 +646,14 @@ valign(align, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Given a total allocated space `Y`, `subject` will be positioned vertically
    to `Y * align`.
 2. The `subject` will assume its *minimum vertical limit*.
 3. Returns instance of `Proxy`.
 
 #### Examples
+
 1. `valign(0.0) // align subject to the top`
 2. `valign(1.0) // align subject to the right`
 3. `valign(0.5) // align subject to the middle`
@@ -675,6 +677,7 @@ align_top(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `valign(0.0, subject)`
 2. Returns instance of `Proxy`.
 
@@ -697,6 +700,7 @@ align_middle(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `valign(0.5, subject)`
 2. Returns instance of `Proxy`.
 
@@ -719,6 +723,7 @@ align_bottom(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `valign(1.0, subject)`
 2. Returns instance of `Proxy`.
 
@@ -741,6 +746,7 @@ align_left_top(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_left(align_top(subject))`
 2. Returns instance of `Proxy`.
 
@@ -763,6 +769,7 @@ align_center_top(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_center(align_top(subject))`
 2. Returns instance of `Proxy`.
 
@@ -785,6 +792,7 @@ align_right_top(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_right(align_top(subject))`
 2. Returns instance of `Proxy`.
 
@@ -807,6 +815,7 @@ align_left_middle(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_left(align_middle(subject))`
 2. Returns instance of `Proxy`.
 
@@ -829,6 +838,7 @@ align_center_middle(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_center(align_middle(subject))`
 2. Returns instance of `Proxy`.
 
@@ -851,6 +861,7 @@ align_right_middle(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_right(align_middle(subject))`
 2. Returns instance of `Proxy`.
 
@@ -873,6 +884,7 @@ align_left_bottom(subject)
 | subject   | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_left(align_bottom(subject))`
 2. Returns instance of `Proxy`.
 
@@ -895,6 +907,7 @@ align_center_bottom(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_center(align_bottom(subject))`
 2. Returns instance of `Proxy`.
 
@@ -917,6 +930,7 @@ align_right_bottom(subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Equivalent to `align_right(align_bottom(subject))`
 2. Returns instance of `Proxy`.
 
@@ -948,6 +962,7 @@ margin({ left, top, right, bottom }, subject)
 | `subject`                         | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the left, top, right, and bottom of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -975,6 +990,7 @@ left_margin(left, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the left of the subject with the given parameter.
 2. The element's *limits* is overridden to account for the additional space.
 3. The `left_margin` does not violate the natural *limits* of the subject.
@@ -1002,6 +1018,7 @@ right_margin(right, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the right of the subject with the given parameter.
 2. The element's *limits* is overridden to account for the additional space.
 3. The `right_margin` does not violate the natural *limits* of the subject.
@@ -1029,6 +1046,7 @@ top_margin(top, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the top of the subject with the given parameter.
 2. The element's *limits* is overridden to account for the additional space.
 3. The `top_margin` does not violate the natural *limits* of the subject.
@@ -1056,6 +1074,7 @@ bottom_margin(bottom, subject)
 | `subject`    | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the bottom of the subject with the given
    parameter.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1067,6 +1086,7 @@ bottom_margin(bottom, subject)
 -------------------------------------------------------------------------------
 
 ### hmargin
+
 (same as `left_right_margin`)
 
 <img width="40%" height="40%" src="assets/images/layout/hmargin.png">
@@ -1095,6 +1115,7 @@ left_right_margin(left, right, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the left and right sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1106,6 +1127,7 @@ left_right_margin(left, right, subject)
 -------------------------------------------------------------------------------
 
 ### vmargin
+
 (same as `top_bottom_margin`)
 
 <img width="40%" height="40%" src="assets/images/layout/vmargin.png">
@@ -1134,6 +1156,7 @@ top_bottom_margin(top, bottom, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the top and bottom sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1166,6 +1189,7 @@ left_top_margin(left, top, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the left and top sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1198,6 +1222,7 @@ left_bottom_margin(left, bottom, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the left and bottom sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1230,6 +1255,7 @@ right_top_margin(right, top, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the right and top sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1262,6 +1288,7 @@ right_bottom_margin(right, bottom, subject)
 | `subject`          | Instance of `Element` |
 
 #### Semantics
+
 1. Space is added to the to the right and bottom sides of the subject with the
    given parameters.
 2. The element's *limits* is overridden to account for the additional space.
@@ -1279,18 +1306,19 @@ right_bottom_margin(right, bottom, subject)
 A floating element allows arbitrary placement of an enclosed element
 (`subject`) in the main view.
 
-#### Expression
+### Expression
 
 ```c++
 floating({ left, top, right, bottom }, subject)
 ```
 
-#### Notation
+### Notation
 
 | `left`, `top`, `right`, `bottom`  | `float`               |
 | `subject`                         | Instance of `Element` |
 
-#### Semantics
+### Semantics
+
 1. The element will be placed exactly to the specified position in the main
    view, constrained to the subject's natural *limits*.
 2. The floating element does not violate the natural *limits* of the subject.
@@ -1323,6 +1351,7 @@ Grids have computed horizontal and vertical sizes following the natural
 `limits` of its children.
 
 #### Semantics
+
 1. The elements are laid out in a single row, left to right, immediately next
    to each other with no intervening space.
 2. The elements are positioned horizontally using the supplied fractional
@@ -1377,6 +1406,7 @@ hgrid(positions, item1, item2, item3, item4)
 `hgrid_composite` (see below).
 
 #### Requirements
+
 1. The number of supplied positions and elements should match, otherwise,
    compiler error (no matching function for call to `hgrid`).
 2. The positions assume the first element is at `x=0` (it is at the left-most
@@ -1387,7 +1417,8 @@ hgrid(positions, item1, item2, item3, item4)
    this is violated.
 
 #### Semantics
-1. In addition to the semantics of Horizontal Grids, returns instance of
+
+1. In addition to the semantics of [Horizontal Grids], returns instance of
    `Composite`.
 
 -------------------------------------------------------------------------------
@@ -1427,6 +1458,7 @@ interface, it can also be `share`d like any element, which allows you to
 build complex hierarchical structures.
 
 #### Requirements
+
 1. The number of items in the external coordinates vector `positions` must match
    with the number of elements at any given time.
 2. The positions assume the first element is at `x=0` (it is at the left-most
@@ -1442,12 +1474,13 @@ build complex hierarchical structures.
 
 <img width="60%" height="60%" src="assets/images/layout/htile.png">
 
-Horizontal Tiles are similar to Horizontal Grids, but allow elements to
+Horizontal Tiles are similar to [Horizontal Grids], but allow elements to
 fluidly adjust horizontally depending on available space. Horizontal Tiles
 are best used for composing UI elements while Horizontal Grids are best for
 composing tables.
 
 #### Semantics
+
 1. The elements are laid out in a single row, left to right, immediately next
    to each other with no intervening space.
 2. The elements are positioned horizontally using the children's natural
@@ -1508,6 +1541,7 @@ htile(item1, item2, item3, item4)
 `htile_composite` (see below).
 
 #### Semantics
+
 1. In addition to the semantics of Horizontal Tiles, returns instance of
    `Composite`.
 
@@ -1558,6 +1592,7 @@ Grids have computed horizontal and vertical sizes following the natural
 `limits` of its children.
 
 #### Semantics
+
 1. The elements are laid out in a single column, top to bottom, immediately
    next to each other with no intervening space.
 2. The elements are positioned vertically using the supplied fractional
@@ -1613,6 +1648,7 @@ vgrid(positions, item1, item2, item3, item4)
 `vgrid_composite` (see below).
 
 #### Requirements
+
 1. The number of supplied coordinates and elements should match, otherwise,
    compiler error (no matching function for call to `vgrid`).
 2. The positions assume the first element is at `x=0` (it is at the top-most
@@ -1623,6 +1659,7 @@ vgrid(positions, item1, item2, item3, item4)
    this is violated.
 
 #### Semantics
+
 1. In addition to the semantics of Vertical Grids, returns instance of
    `Composite`.
 
@@ -1661,6 +1698,7 @@ interface, it can also be `share`d like any element, which allows you to
 build complex hierarchical structures.
 
 #### Requirements
+
 1. The number of items in the external coordinates vector `positions` must match
    with the number of elements at any given time.
 2. The positions assume the first element is at `x=0` (it is at the top-most
@@ -1676,11 +1714,12 @@ build complex hierarchical structures.
 
 <img width="60%" height="60%" src="assets/images/layout/vtile.png">
 
-Vertical Tiles are similar to Vertical Grids, but allow elements to fluidly
+Vertical Tiles are similar to [Vertical Grids], but allow elements to fluidly
 adjust vertically depending on available space. Vertical Tiles are best used
 for composing UI elements while Vertical Grids are best for composing tables.
 
 #### Semantics
+
 1. The elements are laid out in a single column, left to right, immediately
    next to each other with no intervening space.
 2. The elements are positioned vertically using the children's natural
@@ -1741,6 +1780,7 @@ vtile(item1, item2, item3, item4)
 `vtile_composite` (see below).
 
 #### Semantics
+
 1. In addition to the semantics of Vertical Tiles, returns instance of
    `Composite`.
 
@@ -1783,13 +1823,14 @@ allows you to build complex hierarchical structures.
 
 ## Layers
 
-<img width="40%" height="40%" src="assets/images/layout/layer.png">
+<img width="40%" height="40%" src="assets/images/layout/layer.png"/>
 
 The Elements Library is 2D, but the z-axis pertains to top-to-bottom
 layering. Layers allow groups of elements to be placed in the z-axis where
 higher-level elements obscure or hide lower-level elements.
 
-#### Semantics
+### Semantics
+
 1. The elements are laid out in the z-axis, top to bottom.
 2. Rendering is done bottom-up; the bottom-most elements are drawn first.
 3. UI control (such as mouse clicks) proceeds from top to bottom.
@@ -1840,6 +1881,7 @@ layer(item1, item2, item3, item4)
 `layer_composite` (see below).
 
 #### Semantics
+
 1. In addition to the semantics of Layers, returns instance of `Composite`.
 
 -------------------------------------------------------------------------------
@@ -1885,6 +1927,7 @@ The Deck is very similar to layers. Elements are placed in the z-axis. But
 unlike layers, only selected element is active (top-most by default).
 
 #### Semantics
+
 1. Everything listed in the layer's *Semantics*, except 2 and 3.
 2. Only the active selected element element is drawn.
 3. Only the active selected element is given the chance to process UI control.
@@ -1919,6 +1962,7 @@ deck(item1, item2, item3, item4)
 `deck_composite` (see below).
 
 #### Requirements
+
 1. In addition to the semantics of Deck, returns instance of `Composite`.
 
 -------------------------------------------------------------------------------
@@ -2029,9 +2073,5 @@ flow(c)
 | `c`             | Instance of `flow_composite` |
 
 #### Semantics
+
 1. Returns instance of `Composite`.
-
--------------------------------------------------------------------------------
-
-*Copyright (c) 2014-2020 Joel de Guzman. All rights reserved.*
-*Distributed under the [MIT License](https://opensource.org/licenses/MIT)*

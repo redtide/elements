@@ -2,16 +2,6 @@
 ---
 # Design Aspects
 
-## Table of Contents
-* [Minimal Example](#minimal-example)
-* [App and Window](#app-and-window)
-* [Background](#background)
-* [Aligns and Sizes](#aligns-and-sizes)
-* [Labels, Margins and Layers](#labels-margins-and-layers)
-* [Let's Make a Button](#lets-make-a-button)
-* [Sliders too!](#sliders-too)
-
--------------------------------------------------------------------------------
 This document explains the three key design aspects behind Elements through
 examples. The Elements C++ GUI library is:
 
@@ -374,8 +364,3 @@ But note that, in this case, we want to center the slider only horizontally,
 so we use `align_center` instead of `align_center_middle`.
 
 Ok, there you go! Now go and be creative and make your own controls!
-
--------------------------------------------------------------------------------
-
-*Copyright (c) 2014-2020 Joel de Guzman. All rights reserved.*
-*Distributed under the [MIT License](https://opensource.org/licenses/MIT)*
