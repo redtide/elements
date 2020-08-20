@@ -10,7 +10,7 @@ description: >-
   Elements is a lightweight, fine-grained, HDPI capable, resolution
   independent, modular C++ GUI library.
 url: "https://cycfi.github.io"
-baseurl: "/elements"
+baseurl: "/elements-hyde-theme"
 
 remote_theme: adobe/hyde-theme@v1.0.0
 adobe_hyde:
