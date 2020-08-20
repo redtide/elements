@@ -1,0 +1,12 @@
+{
+    "hyde-src-root": "lib/include",
+    "hyde-yaml-dir": "docs/api",
+    "clang_flags": [
+        "-std=c++17",
+        "-Ilib/external/asio/asio/include",
+        "-Ilib/external/cairo/include",
+        "-Ilib/include",
+        "-Ilib/infra/include",
+        "-Wno-everything"
+    ]
+}

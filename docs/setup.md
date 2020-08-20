@@ -1,4 +1,5 @@
 ---
+tab: Setup
 ---
 # Setup and Installation
 

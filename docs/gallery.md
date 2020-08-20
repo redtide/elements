@@ -1,4 +1,5 @@
 ---
+tab: Gallery
 ---
 # Gallery
 
