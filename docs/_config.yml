@@ -6,9 +6,9 @@ defaults:
     layout: "default"
 
 title: "Elements C++ GUI library"
-description: >-
-  Elements is a lightweight, fine-grained, HDPI capable, resolution
-  independent, modular C++ GUI library.
+description:
+  "Elements is a lightweight, fine-grained, HDPI capable, resolution
+  independent, modular C++ GUI library."
 url: "https://cycfi.github.io"
 baseurl: "/elements-hyde-theme"
 
