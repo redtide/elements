@@ -34,11 +34,15 @@ name: "Joel de Guzman"
 
 # Build settings
 markdown: kramdown
+kramdown:
+   auto_ids: false
+
 theme: jekyll-theme-cayman
+
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jemoji
+- jekyll-feed
+- jekyll-sitemap
+- jemoji
 
 # Using GitHub Jekyll v3.9.0, these are not ignored by default
 exclude:
