@@ -1,7 +1,6 @@
 ---
+title: "About"
 ---
-# About
-
 ## History
 
 <div class = "img-align-right" style="width:35%">

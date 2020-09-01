@@ -1,7 +1,6 @@
 ---
+title: "Design Aspects"
 ---
-# Design Aspects
-
 ## Table of Contents
 * [Minimal Example](#minimal-example)
 * [App and Window](#app-and-window)

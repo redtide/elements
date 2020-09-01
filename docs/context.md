@@ -1,7 +1,6 @@
 ---
+title: "Context"
 ---
-# Context
-
 -------------------------------------------------------------------------------
 A majority of element's member functions require a drawing "context". The
 `context` class provides information such as the element's `bounds`, a

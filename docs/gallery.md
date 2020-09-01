@@ -1,7 +1,6 @@
 ---
+title: "Gallery"
 ---
-# Gallery
-
 It’s always a nice to have some pretty pictures:
 
 <div class="grid">

@@ -1,7 +1,6 @@
 ---
+title: "Layout"
 ---
-# Layout
-
 ## Table of Contents
 * [Limits](#limits)
 * [Size Elements](#size-elements)

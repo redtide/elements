@@ -15,6 +15,8 @@
     {% endif %}
     <meta charset="UTF-8">
 
+    <title>{%-if page.title-%}{{ page.title | escape }} - {{ site.title }}{%-else-%}{{ site.title }}{%-endif-%}</title>
+
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
@@ -45,6 +47,8 @@
     {% include navigation.html %}
 
     <main id="content" class="main-content" role="main">
+      {%-if page.title-%}<h1>{{ page.title | escape }}</h1>{%-endif-%}
+
       {{ content }}
       {% include footer.html %}
     </main>
