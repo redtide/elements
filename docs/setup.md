@@ -35,11 +35,15 @@ Elements.
 ### C++17
 
 Elements currently supports the MacOS, Windows and Linux. In the Mac, we
-support both [XCode] IDE. Elements is tested with XCode 10 and XCode 11.
+support the [XCode] IDE. Elements is tested with XCode 10 and XCode 11.
+
 In Windows, we support Windows 10 with [Visual Studio 2019], although it
 will probably also work with older versions of the Visual Studio IDE. In
 Linux, we support both [Clang] and [g++]. Get the latest version with
-a C++17 compiler. The [CLion] IDE is supported on all platforms.
+a C++17 compiler.
+
+The [CLion] IDE is supported on all platforms, it simply requires
+the CMakeLists.txt file to open and build the project.
 
 ### Git
 
@@ -54,6 +58,12 @@ git clone --recurse-submodules  https://github.com/cycfi/elements.git
 Make sure you have [CMake] 3.9.6 or higher. Follow the
 [installation procedure] for your platform, or follow the instructions below
 for specific environments.
+The project can be built either with the platform specific tool or using CMake
+with the command
+
+```
+cmake --build . --config Release
+```
 
 ### Required Libraries
 
@@ -102,10 +112,6 @@ cmake -GXcode ../
 If successful, CMake will generate an [XCode] project in the build directory.
 Open the project file elements.xcodeproj and build all. You should see a
 couple of example applications.
-
-### Using CLion
-
-Simply open the CMakeLists.txt file using [CLion] and build the project.
 
 -------------------------------------------------------------------------------
 
@@ -200,21 +206,16 @@ your platform and desired IDE, but here are some examples for MSYS2:
 1. CD to the elements library.
 2. Make a build directory inside the elements directory.
 3. CD to the build directory.
-4. invoke cmake. -DHOST_UI_LIBRARY=gtk tells cmake to build with Gtk.
+4. invoke cmake. `-DELEMENTS_HOST_UI_LIBRARY=gtk` tells cmake to build with Gtk.
 
 ```
 cd elements
 mkdir build
 cd build
-cmake ../ -G "Unix Makefiles" -DHOST_UI_LIBRARY=gtk
+cmake ../ -G "Unix Makefiles" -DELEMENTS_HOST_UI_LIBRARY=gtk
 ```
 
 If successful, cmake will generate Unix Make files in the build directory.
-
-### Using CLion
-
-Simply open the CMakeLists.txt file using [CLion] and build the project.
-
 
 -------------------------------------------------------------------------------
 
@@ -259,10 +260,6 @@ cmake -G "Unix Makefiles" ../
 ```
 
 If successful, cmake will generate Unix Make files in the build directory.
-
-### Using CLion
-
-Simply open the CMakeLists.txt file using [CLion] and build the project.
 
 -------------------------------------------------------------------------------
 
