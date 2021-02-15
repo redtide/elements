@@ -45,11 +45,11 @@ endif()
 # UI Libraries
 
 if(WIN32)
-    set(ELEMENTS_HOST_UI_LIBRARY "win32" CACHE STRING "gtk, cocoa or win32")
+    set(ELEMENTS_HOST_UI_LIBRARY "win32" CACHE STRING "gtk, cocoa, win32 or custom")
 elseif(UNIX AND NOT APPLE)
-    set(ELEMENTS_HOST_UI_LIBRARY "gtk" CACHE STRING "gtk, cocoa or win32")
+    set(ELEMENTS_HOST_UI_LIBRARY "gtk" CACHE STRING "gtk, cocoa, win32 or custom")
 elseif(APPLE)
-    set(ELEMENTS_HOST_UI_LIBRARY "cocoa" CACHE STRING "gtk, cocoa or win32")
+    set(ELEMENTS_HOST_UI_LIBRARY "cocoa" CACHE STRING "gtk, cocoa, win32 or custom")
 endif()
 
 message(STATUS "building elements with ${ELEMENTS_HOST_UI_LIBRARY} host UI library")
